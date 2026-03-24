@@ -79,10 +79,6 @@
             if (lang === 'zh') {
                 document.title = 'Preparation 汉语拼音入门';
                 document.getElementById('page-title').textContent = 'Preparation 汉语拼音入门';
-                document.getElementById('course-intro').textContent = '课程介绍';
-                document.getElementById('intro-text').textContent = '在这个课堂上，您可以对汉语拼音有初步的了解，掌握基本发音规律。您将练习汉语拼音的拼读。本课结束后，您将认得拼音，听得出4个音调，不怕开口读中文。';
-                document.getElementById('course-content').textContent = '课程内容';
-                document.getElementById('content-text').textContent = '课程包含：14节课和若干练习';
                 document.getElementById('lesson1').textContent = '第一课 单韵母 a o e';
                 document.getElementById('lesson2').textContent = '第二课 单韵母 i u ü';
                 document.getElementById('lesson3').textContent = '第三课 声母 b p m f';
@@ -101,10 +97,6 @@
             } else if (lang === 'en') {
                 document.title = 'Preparation Pinyin Introduction';
                 document.getElementById('page-title').textContent = 'Preparation Pinyin Introduction';
-                document.getElementById('course-intro').textContent = 'Course Introduction';
-                document.getElementById('intro-text').textContent = 'In this course, you will get a basic understanding of Chinese Pinyin and master basic pronunciation rules. You will practice Pinyin spelling. After this course, you will recognize Pinyin, distinguish the 4 tones, and not be afraid to speak Chinese.';
-                document.getElementById('course-content').textContent = 'Course Content';
-                document.getElementById('content-text').textContent = 'Course includes: 14 lessons and several exercises';
                 document.getElementById('lesson1').textContent = 'Lesson 1 Simple Vowels a o e';
                 document.getElementById('lesson2').textContent = 'Lesson 2 Simple Vowels i u ü';
                 document.getElementById('lesson3').textContent = 'Lesson 3 Initials b p m f';
@@ -125,8 +117,8 @@
     </script>
 </head>
 <body>
-    <div style="background-color: #4da6ff; color: white; padding: 40px; margin: 0 auto 0; max-width: 960px;">
-        <div style="position: relative; padding: 0 20px;">
+    <div style="background-color: #4da6ff; color: white; padding: 40px 20px; margin: 0 auto 0; max-width: 960px;">
+        <div style="position: relative;">
             <div style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
                 <select id="lang-select" style="background-color: white; color: black; font-weight: bold; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;" onchange="changeLanguage()">
                     <option value="zh">中文</option>
@@ -142,11 +134,7 @@
     </div>
     <div class="container" style="max-width: 960px; margin: 0 auto; padding: 20px;">
         <div class="course-content">
-            <h2 id="course-intro">课程介绍</h2>
-            <p id="intro-text">在这个课堂上，您可以对汉语拼音有初步的了解，掌握基本发音规律。您将练习汉语拼音的拼读。本课结束后，您将认得拼音，听得出4个音调，不怕开口读中文。</p>
-            
-            <h2 id="course-content">课程内容</h2>
-            <p id="content-text">课程包含：14节课和若干练习</p>
+
             
             <div class="section">
                 <h3><a href="lesson1.html" id="lesson1">第一课 单韵母 a o e</a></h3>
