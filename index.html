@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中文学习网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .lang-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .lang-select {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .lang-select:hover {
+            background-color: #0052a3;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .level-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .level-card h2 {
+            color: #0066cc;
+            margin-top: 0;
+        }
+        .level-card a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .level-card a:hover {
+            text-decoration: underline;
+        }
+        .course-description {
+            margin-top: 10px;
+            color: #666;
+        }
+    </style>
+    <script>
+        function changeLanguage() {
+            var lang = document.getElementById('lang-select').value;
+            if (lang === 'zh') {
+                document.getElementById('site-title').textContent = '中文学习网站';
+                document.getElementById('prep-title').textContent = 'Preparation 汉语拼音入门';
+                document.getElementById('prep-desc').innerHTML = '<p>在这个课堂上，您可以对汉语拼音有初步的了解，掌握基本发音规律。您将练习汉语拼音的拼读。本课结束后，您将认得拼音，听得出4个音调，不怕开口读中文。</p><p>课程包含：14节课和若干练习</p>';
+                document.getElementById('level0-title').textContent = 'Level 0 中文零基础入门';
+                document.getElementById('level0-desc').innerHTML = '<p>在这个课堂上，您可以对汉语拼音有初步的了解，掌握基本发音规律。您将练习汉语拼音的拼读。本课结束后，您将认得拼音，听得出4个音调，不怕开口读中文。</p><p>课程包含：12节课和若干练习</p>';
+            } else if (lang === 'en') {
+                document.getElementById('site-title').textContent = 'Chinese Learning Website';
+                document.getElementById('prep-title').textContent = 'Preparation Pinyin Introduction';
+                document.getElementById('prep-desc').innerHTML = '<p>In this course, you will get a basic understanding of Chinese Pinyin and master basic pronunciation rules. You will practice Pinyin spelling. After this course, you will recognize Pinyin, distinguish the 4 tones, and not be afraid to speak Chinese.</p><p>Course includes: 14 lessons and several exercises</p>';
+                document.getElementById('level0-title').textContent = 'Level 0 Chinese Zero-Basis Introduction';
+                document.getElementById('level0-desc').innerHTML = '<p>In this course, you will get a basic understanding of Chinese Pinyin and master basic pronunciation rules. You will practice Pinyin spelling. After this course, you will recognize Pinyin, distinguish the 4 tones, and not be afraid to speak Chinese.</p><p>Course includes: 12 lessons and several exercises</p>';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="background-color: #4da6ff; color: white; padding: 40px; margin: 0 auto 0; max-width: 960px;">
+        <div style="position: relative; padding: 0 20px;">
+            <div style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
+                <select id="lang-select" style="background-color: white; color: black; font-weight: bold; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;" onchange="changeLanguage()">
+                    <option value="zh">中文</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 0;">
+        <h1 id="site-title">中文学习网站</h1>
+        <div class="level-card">
+            <h2 id="prep-title"><a href="preparation.html">Preparation 汉语拼音入门</a></h2>
+            <div class="course-description" id="prep-desc">
+                <p>在这个课堂上，您可以对汉语拼音有初步的了解，掌握基本发音规律。您将练习汉语拼音的拼读。本课结束后，您将认得拼音，听得出4个音调，不怕开口读中文。</p>
+                <p>课程包含：14节课和若干练习</p>
+            </div>
+        </div>
+        <div class="level-card">
+            <h2 id="level0-title"><a href="level0.html">Level 0 中文零基础入门</a></h2>
+            <div class="course-description" id="level0-desc">
+                <p>在这个课堂上，您可以对汉语拼音有初步的了解，掌握基本发音规律。您将练习汉语拼音的拼读。本课结束后，您将认得拼音，听得出4个音调，不怕开口读中文。</p>
+                <p>课程包含：12节课和若干练习</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

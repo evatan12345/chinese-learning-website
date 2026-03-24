@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 0 中文零基础入门</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .lang-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .lang-select {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .lang-select:hover {
+            background-color: #0052a3;
+        }
+        .header {
+            background-color: #0066cc;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .course-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .section h3 {
+            color: #0066cc;
+        }
+        .section h3 a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .section h3 a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function changeLanguage() {
+            var lang = document.getElementById('lang-select').value;
+            if (lang === 'zh') {
+                document.title = 'Level 0 中文零基础入门';
+                document.getElementById('page-title').textContent = 'Level 0 中文零基础入门';
+                document.getElementById('course-intro').textContent = '课程介绍';
+                document.getElementById('intro-text').textContent = '在这个课堂上，您可以对汉语拼音有初步的了解，掌握基本发音规律。您将练习汉语拼音的拼读。本课结束后，您将认得拼音，听得出4个音调，不怕开口读中文。';
+                document.getElementById('course-content').textContent = '课程内容';
+                document.getElementById('content-text').textContent = '课程包含：12节课和若干练习';
+                document.getElementById('lesson1').textContent = '第一课 你好！';
+                document.getElementById('lesson2').textContent = '第二课 我的住址';
+                document.getElementById('lesson3').textContent = '第三课 我的家庭';
+                document.getElementById('lesson4').textContent = '第四课 吃和喝';
+                document.getElementById('lesson5').textContent = '第五课 购物';
+                document.getElementById('lesson6').textContent = '第六课 中文学习';
+                document.getElementById('lesson7').textContent = '第七课 我的一天';
+                document.getElementById('lesson8').textContent = '第八课 在城市中';
+                document.getElementById('lesson9').textContent = '第九课 汉语拼音';
+                document.getElementById('lesson10').textContent = '第十课 我生病了';
+                document.getElementById('lesson11').textContent = '第十一课 我今天穿什么？';
+                document.getElementById('lesson12').textContent = '第十二课 月份和季节';
+                document.getElementById('back-link').textContent = '返回首页';
+            } else if (lang === 'en') {
+                document.title = 'Level 0 Chinese Zero-Basis Introduction';
+                document.getElementById('page-title').textContent = 'Level 0 Chinese Zero-Basis Introduction';
+                document.getElementById('course-intro').textContent = 'Course Introduction';
+                document.getElementById('intro-text').textContent = 'In this course, you will get a basic understanding of Chinese Pinyin and master basic pronunciation rules. You will practice Pinyin spelling. After this course, you will recognize Pinyin, distinguish the 4 tones, and not be afraid to speak Chinese.';
+                document.getElementById('course-content').textContent = 'Course Content';
+                document.getElementById('content-text').textContent = 'Course includes: 12 lessons and several exercises';
+                document.getElementById('lesson1').textContent = 'Lesson 1 Hello!';
+                document.getElementById('lesson2').textContent = 'Lesson 2 My Address';
+                document.getElementById('lesson3').textContent = 'Lesson 3 My Family';
+                document.getElementById('lesson4').textContent = 'Lesson 4 Eating and Drinking';
+                document.getElementById('lesson5').textContent = 'Lesson 5 Shopping';
+                document.getElementById('lesson6').textContent = 'Lesson 6 Chinese Learning';
+                document.getElementById('lesson7').textContent = 'Lesson 7 My Day';
+                document.getElementById('lesson8').textContent = 'Lesson 8 In the City';
+                document.getElementById('lesson9').textContent = 'Lesson 9 Chinese Pinyin';
+                document.getElementById('lesson10').textContent = 'Lesson 10 I Am Sick';
+                document.getElementById('lesson11').textContent = 'Lesson 11 What Am I Wearing Today?';
+                document.getElementById('lesson12').textContent = 'Lesson 12 Months and Seasons';
+                document.getElementById('back-link').textContent = 'Back to Home';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="background-color: #4da6ff; color: white; padding: 40px; margin: 0 auto 0; max-width: 960px;">
+        <div style="position: relative; padding: 0 20px;">
+            <div style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
+                <select id="lang-select" style="background-color: white; color: black; font-weight: bold; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;" onchange="changeLanguage()">
+                    <option value="zh">中文</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="header" style="margin-top: 0; border-radius: 0; width: 100%; padding: 4px 0;">
+        <div class="container" style="max-width: 960px; margin: 0 auto;">
+            <h1 id="page-title" style="font-size: 24px;">Level 0 中文零基础入门</h1>
+        </div>
+    </div>
+    <div class="container" style="max-width: 960px; margin: 0 auto; padding: 20px;">
+        <div class="course-content">
+            <h2 id="course-intro">课程介绍</h2>
+            <p id="intro-text">在这个课堂上，您可以对汉语拼音有初步的了解，掌握基本发音规律。您将练习汉语拼音的拼读。本课结束后，您将认得拼音，听得出4个音调，不怕开口读中文。</p>
+            
+            <h2 id="course-content">课程内容</h2>
+            <p id="content-text">课程包含：12节课和若干练习</p>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson1">第一课 你好！</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson2">第二课 我的住址</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson3">第三课 我的家庭</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson4">第四课 吃和喝</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson5">第五课 购物</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson6">第六课 中文学习</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson7">第七课 我的一天</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson8">第八课 在城市中</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson9">第九课 汉语拼音</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson10">第十课 我生病了</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson11">第十一课 我今天穿什么？</a></h3>
+            </div>
+            
+            <div class="section">
+                <h3><a href="#" id="lesson12">第十二课 月份和季节</a></h3>
+            </div>
+            
+            <a href="index.html" class="back-link" id="back-link">返回首页</a>
+        </div>
+    </div>
+</body>
+</html>

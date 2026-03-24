@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单韵母 a</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .lang-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .lang-select {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .lang-select:hover {
+            background-color: #0052a3;
+        }
+        .header {
+            background-color: #0066cc;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .course-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .video-section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .video-section video {
+            max-width: 100%;
+            height: auto;
+        }
+        .description {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function changeLanguage() {
+            var lang = document.getElementById('lang-select').value;
+            if (lang === 'zh') {
+                document.title = '单韵母 a';
+                document.getElementById('page-title').textContent = '单韵母 a';
+                document.getElementById('desc1').textContent = 'a';
+                document.getElementById('desc2').textContent = '像医生说的 "啊——"';
+                document.getElementById('desc3').textContent = '嘴巴张大，声音自然出来';
+                document.getElementById('prev-link').textContent = '上一部分';
+                document.getElementById('next-link').textContent = '继续';
+                document.getElementById('record-btn').textContent = '🎙️ 录音';
+            } else if (lang === 'en') {
+                document.title = 'Simple Vowel a';
+                document.getElementById('page-title').textContent = 'Simple Vowel a';
+                document.getElementById('desc1').textContent = 'a';
+                document.getElementById('desc2').textContent = 'Like a doctor saying "Ah——"';
+                document.getElementById('desc3').textContent = 'Open your mouth wide, let the sound come naturally';
+                document.getElementById('prev-link').textContent = 'Previous Part';
+                document.getElementById('next-link').textContent = 'Continue';
+                document.getElementById('record-btn').textContent = '🎙️ Record';
+            }
+        }
+        
+        // 录音功能
+        let mediaRecorder;
+        let audioChunks = [];
+        let isRecording = false;
+        
+        document.getElementById('record-btn').addEventListener('click', function() {
+            if (!isRecording) {
+                // 开始录音
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                    .then(stream => {
+                        mediaRecorder = new MediaRecorder(stream);
+                        audioChunks = [];
+                        
+                        mediaRecorder.ondataavailable = event => {
+                            audioChunks.push(event.data);
+                        };
+                        
+                        mediaRecorder.onstop = () => {
+                            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                            const audioUrl = URL.createObjectURL(audioBlob);
+                            
+                            // 创建音频元素用于播放
+                            const audio = new Audio(audioUrl);
+                            window.recordedAudio = audio; // 保存到全局变量
+                            
+                            document.getElementById('recording-status').textContent = '录音完成，点击按钮播放录音';
+                            document.getElementById('record-btn').textContent = '🎙️ 播放录音';
+                            isRecording = false;
+                        };
+                        
+                        mediaRecorder.start();
+                        document.getElementById('recording-status').textContent = '正在录音...';
+                        document.getElementById('record-btn').textContent = '🎙️ 停止录音';
+                        isRecording = true;
+                    })
+                    .catch(err => {
+                        console.error('无法访问麦克风:', err);
+                        document.getElementById('recording-status').textContent = '无法访问麦克风，请检查权限设置';
+                    });
+            } else {
+                // 停止录音
+                mediaRecorder.stop();
+            }
+        });
+        
+        // 监听按钮点击，播放录音
+        document.getElementById('record-btn').addEventListener('click', function() {
+            if (!isRecording && window.recordedAudio) {
+                window.recordedAudio.play();
+                document.getElementById('recording-status').textContent = '正在播放录音...';
+            }
+        });
+    </script>
+</head>
+<body>
+    <div style="background-color: #4da6ff; color: white; padding: 40px; margin: 0 auto 0; max-width: 960px;">
+        <div style="position: relative; padding: 0 20px;">
+            <div style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
+                <select id="lang-select" style="background-color: white; color: black; font-weight: bold; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;" onchange="changeLanguage()">
+                    <option value="zh">中文</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="header" style="margin-top: 0; border-radius: 0; width: 100%; padding: 4px 0;">
+        <div class="container" style="max-width: 960px; margin: 0 auto;">
+            <h1 id="page-title" style="font-size: 24px;">单韵母 a</h1>
+        </div>
+    </div>
+    <div class="container" style="max-width: 960px; margin: 0 auto; padding: 20px;">
+        <div class="course-content">
+            <div class="video-section">
+                <video width="400" controls>
+                    <source src="a.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                 </video>
+                <div class="description">
+                    <p id="desc1">a</p>
+                    <p id="desc2">像医生说的 "啊——"</p>
+                    <p id="desc3">嘴巴张大，声音自然出来</p>
+                </div>
+                <div class="recording-section" style="margin-top: 20px;">
+                    <button id="record-btn" class="lang-select" style="margin: 0;">🎙️ 录音</button>
+                    <p id="recording-status" style="margin-top: 10px; color: #666;"></p>
+                </div>
+            </div>
+            <a href="preparation.html" class="back-link" id="back-to-list">返回课程列表</a>
+            <a href="lesson1.html" class="back-link" style="margin-left: 20px;" id="prev-link">上一部分</a>
+            <a href="lesson1-3.html" class="back-link" style="margin-left: 20px;" id="next-link">继续</a>
+        </div>
+    </div>
+</body>
+</html>
