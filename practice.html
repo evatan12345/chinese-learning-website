@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>你听到的是哪一个？</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', '思源黑体', 'Source Han Sans SC', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
@@ -119,9 +122,10 @@
         }
         
         // 正确答案
-        const correctAnswers = ['a', 'o', 'e', 'a', 'o', 'e'];
+        const correctAnswers = ['a', 'e', 'o', 'a', 'o', 'e'];
         
         function checkAnswers() {
+            let correctCount = 0;
             for (let i = 1; i <= 6; i++) {
                 const selected = document.getElementById(`option-${i}`).value;
                 const resultElement = document.getElementById(`result-${i}`);
@@ -129,10 +133,29 @@
                 if (selected === correctAnswers[i-1]) {
                     resultElement.textContent = '✅';
                     resultElement.style.color = 'green';
+                    correctCount++;
                 } else {
                     resultElement.textContent = '❌';
                     resultElement.style.color = 'red';
                 }
+            }
+            
+            // 显示结果提示
+            let feedbackElement = document.getElementById('feedback');
+            if (!feedbackElement) {
+                feedbackElement = document.createElement('div');
+                feedbackElement.id = 'feedback';
+                feedbackElement.style.marginLeft = '20px';
+                feedbackElement.style.fontSize = '16px';
+                document.getElementById('submit-btn').parentElement.appendChild(feedbackElement);
+            }
+            
+            if (correctCount >= 5) {
+                feedbackElement.textContent = '很棒！正确率大于75%！再接再厉！';
+                feedbackElement.style.color = 'green';
+            } else {
+                feedbackElement.textContent = '没关系，再听一次。';
+                feedbackElement.style.color = 'red';
             }
         }
     </script>
@@ -160,7 +183,7 @@
                     <p>练习 1:</p>
                     <div class="audio-player">
                         <audio controls>
-                            <source src="practice1.mp3" type="audio/mpeg">
+                            <source src="practice1.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
                           </audio>
                         <span id="result-1" class="result"></span>
@@ -180,7 +203,7 @@
                     <p>练习 2:</p>
                     <div class="audio-player">
                         <audio controls>
-                            <source src="practice2.mp3" type="audio/mpeg">
+                            <source src="practice2.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
                          </audio>
                         <span id="result-2" class="result"></span>
@@ -200,7 +223,7 @@
                     <p>练习 3:</p>
                     <div class="audio-player">
                         <audio controls>
-                            <source src="practice3.mp3" type="audio/mpeg">
+                            <source src="practice3.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
                          </audio>
                         <span id="result-3" class="result"></span>
@@ -220,7 +243,7 @@
                     <p>练习 4:</p>
                     <div class="audio-player">
                         <audio controls>
-                            <source src="practice4.mp3" type="audio/mpeg">
+                            <source src="practice4.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
                          </audio>
                         <span id="result-4" class="result"></span>
@@ -240,7 +263,7 @@
                     <p>练习 5:</p>
                     <div class="audio-player">
                         <audio controls>
-                            <source src="practice5.mp3" type="audio/mpeg">
+                            <source src="practice5.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
                          </audio>
                         <span id="result-5" class="result"></span>
@@ -260,7 +283,7 @@
                     <p>练习 6:</p>
                     <div class="audio-player">
                         <audio controls>
-                            <source src="practice6.mp3" type="audio/mpeg">
+                            <source src="practice6.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
                          </audio>
                         <span id="result-6" class="result"></span>
