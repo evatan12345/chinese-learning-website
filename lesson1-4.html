@@ -89,6 +89,7 @@
                 document.getElementById('prev-link').textContent = '上一部分';
                 document.getElementById('next-link').textContent = '继续';
                 document.getElementById('record-btn').textContent = '🎙️ 录音';
+                document.getElementById('footer-text').textContent = '如果这个音觉得难，很正常。现在听得出来就已经很好了。';
             } else if (lang === 'en') {
                 document.title = 'Simple Vowel e';
                 document.getElementById('page-title').textContent = 'Simple Vowel e';
@@ -98,6 +99,7 @@
                 document.getElementById('prev-link').textContent = 'Previous Part';
                 document.getElementById('next-link').textContent = 'Continue';
                 document.getElementById('record-btn').textContent = '🎙️ Record';
+                document.getElementById('footer-text').textContent = 'It\'s normal if this sound feels difficult. It\'s already great if you can hear it now.';
             }
         }
         
@@ -191,6 +193,10 @@
             <a href="preparation.html" class="back-link" id="back-to-list">返回课程列表</a>
             <a href="lesson1-3.html" class="back-link" style="margin-left: 20px;" id="prev-link">上一部分</a>
             <a href="practice.html" class="back-link" style="margin-left: 20px;" id="next-link">继续</a>
+            
+            <div style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
+                <p id="footer-text" style="font-size: 16px; line-height: 1.5;">如果这个音觉得难，很正常。现在听得出来就已经很好了。</p>
+            </div>
         </div>
     </div>
 </body>

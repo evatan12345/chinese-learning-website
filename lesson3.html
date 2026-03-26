@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三课 声母 b p m f</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', '思源黑体', 'Source Han Sans SC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .lang-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .lang-select {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .lang-select:hover {
+            background-color: #0052a3;
+        }
+        .header {
+            background-color: #0066cc;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .course-content {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .audio-section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .audio-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .audio-player {
+            margin: 20px 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function changeLanguage() {
+            var lang = document.getElementById('lang-select').value;
+            if (lang === 'zh') {
+                document.title = '第三课 声母 b p m f';
+                document.getElementById('page-title').textContent = '第三课 声母 b p m f';
+                document.getElementById('intro-text').textContent = '听一听。这些是两个声音连在一起。';
+                document.getElementById('back-link').textContent = '返回课程列表';
+            } else if (lang === 'en') {
+                document.title = 'Lesson 3 Initials b p m f';
+                document.getElementById('page-title').textContent = 'Lesson 3 Initials b p m f';
+                document.getElementById('intro-text').textContent = 'Listen. These are two sounds connected together.';
+                document.getElementById('back-link').textContent = 'Back to Course List';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="background-color: #4da6ff; color: white; padding: 40px 20px; margin: 0 auto 0; max-width: 960px;">
+        <div style="position: relative;">
+            <div style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
+                <select id="lang-select" style="background-color: white; color: black; font-weight: bold; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;" onchange="changeLanguage()">
+                    <option value="zh">中文</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="header" style="margin-top: 0; border-radius: 0; width: 100%; padding: 4px 0;">
+        <div class="container" style="max-width: 960px; margin: 0 auto;">
+            <h1 id="page-title" style="font-size: 24px;">第三课 声母 b p m f</h1>
+        </div>
+    </div>
+    <div class="container" style="max-width: 960px; margin: 0 auto; padding: 20px;">
+        <div class="course-content">
+            <div class="audio-section">
+                <p id="intro-text">听一听。这些是两个声音连在一起。</p>
+                <div class="audio-player">
+                    <audio controls>
+                        <source src="bpmf.m4a" type="audio/mp4">
+                        您的浏览器不支持音频播放。
+                     </audio>
+                </div>
+            </div>
+            <a href="preparation.html" class="back-link" id="back-link">返回课程列表</a>
+            <a href="lesson3-2.html" class="back-link" style="margin-left: 20px;">继续</a>
+        </div>
+    </div>
+</body>
+</html>

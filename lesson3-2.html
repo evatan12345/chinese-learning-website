@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>单韵母 ü</title>
+    <title>声母 b</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -81,25 +81,23 @@
         function changeLanguage() {
             var lang = document.getElementById('lang-select').value;
             if (lang === 'zh') {
-                document.title = '单韵母 ü';
-                document.getElementById('page-title').textContent = '单韵母 ü';
-                document.getElementById('desc1').textContent = 'ü';
-                document.getElementById('desc2').textContent = '';
-                document.getElementById('desc3').textContent = '嘴巴圆，但是舌头像 i';
+                document.title = '声母 b';
+                document.getElementById('page-title').textContent = '声母 b';
+                document.getElementById('desc1').textContent = 'b';
+                document.getElementById('desc2').textContent = '嘴巴先闭住，然后轻轻放开';
+                document.getElementById('desc3').textContent = '';
                 document.getElementById('prev-link').textContent = '上一部分';
                 document.getElementById('next-link').textContent = '继续';
                 document.getElementById('record-btn').textContent = '🎙️ 录音';
-                document.getElementById('footer-text').textContent = '这个音对很多人来说都很新。如果现在发不好，完全正常。';
             } else if (lang === 'en') {
-                document.title = 'Simple Vowel ü';
-                document.getElementById('page-title').textContent = 'Simple Vowel ü';
-                document.getElementById('desc1').textContent = 'ü';
-                document.getElementById('desc2').textContent = '';
-                document.getElementById('desc3').textContent = 'Round your mouth, but tongue like i';
+                document.title = 'Initial b';
+                document.getElementById('page-title').textContent = 'Initial b';
+                document.getElementById('desc1').textContent = 'b';
+                document.getElementById('desc2').textContent = 'Close your mouth first, then gently open it';
+                document.getElementById('desc3').textContent = '';
                 document.getElementById('prev-link').textContent = 'Previous Part';
                 document.getElementById('next-link').textContent = 'Continue';
                 document.getElementById('record-btn').textContent = '🎙️ Record';
-                document.getElementById('footer-text').textContent = 'This sound is new to many people. It\'s completely normal if you can\'t pronounce it well now.';
             }
         }
         
@@ -170,20 +168,20 @@
     </div>
     <div class="header" style="margin-top: 0; border-radius: 0; width: 100%; padding: 4px 0;">
         <div class="container" style="max-width: 960px; margin: 0 auto;">
-            <h1 id="page-title" style="font-size: 24px;">单韵母 ü</h1>
+            <h1 id="page-title" style="font-size: 24px;">声母 b</h1>
         </div>
     </div>
     <div class="container" style="max-width: 960px; margin: 0 auto; padding: 20px;">
         <div class="course-content">
             <div class="video-section">
                 <video width="400" controls>
-                    <source src="v.mp4" type="video/mp4">
+                    <source src="b.mp4" type="video/mp4">
                     您的浏览器不支持视频播放。
                  </video>
                 <div class="description">
-                    <p id="desc1">ü</p>
-                    <p id="desc2"></p>
-                    <p id="desc3">嘴巴圆，但是舌头像 i</p>
+                    <p id="desc1">b</p>
+                    <p id="desc2">嘴巴先闭住，然后轻轻放开</p>
+                    <p id="desc3"></p>
                 </div>
                 <div class="recording-section" style="margin-top: 20px;">
                     <button id="record-btn" class="lang-select" style="margin: 0;">🎙️ 录音</button>
@@ -191,12 +189,8 @@
                 </div>
             </div>
             <a href="preparation.html" class="back-link" id="back-to-list">返回课程列表</a>
-            <a href="lesson2-3.html" class="back-link" style="margin-left: 20px;" id="prev-link">上一部分</a>
+            <a href="lesson3.html" class="back-link" style="margin-left: 20px;" id="prev-link">上一部分</a>
             <a href="practice.html" class="back-link" style="margin-left: 20px;" id="next-link">继续</a>
-            
-            <div style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
-                <p id="footer-text" style="font-size: 16px; line-height: 1.5;">这个音对很多人来说都很新。如果现在发不好，完全正常。</p>
-            </div>
         </div>
     </div>
 </body>
