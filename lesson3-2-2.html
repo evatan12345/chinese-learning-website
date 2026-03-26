@@ -81,17 +81,17 @@
         function changeLanguage() {
             var lang = document.getElementById('lang-select').value;
             if (lang === 'zh') {
-                document.title = '声母 b 拼读';
-                document.getElementById('page-title').textContent = '声母 b 拼读';
-                document.querySelector('h2').textContent = '拼读';
+                document.title = '拼读';
+                document.getElementById('page-title').textContent = '拼读';
+                document.querySelector('h2').textContent = '';
                 document.getElementById('pinyin-tip').textContent = '先说 b，然后立刻接上 a。不要停。';
                 document.getElementById('prev-link').textContent = '上一部分';
                 document.getElementById('next-link').textContent = '继续';
                 document.getElementById('record-btn').textContent = '🎙️ 录音';
             } else if (lang === 'en') {
-                document.title = 'Initial b Combination';
-                document.getElementById('page-title').textContent = 'Initial b Combination';
-                document.querySelector('h2').textContent = 'Pinyin Combination';
+                document.title = 'Pinyin Combination';
+                document.getElementById('page-title').textContent = 'Pinyin Combination';
+                document.querySelector('h2').textContent = '';
                 document.getElementById('pinyin-tip').textContent = 'Say b first, then immediately follow with a. Don\'t stop.';
                 document.getElementById('prev-link').textContent = 'Previous Part';
                 document.getElementById('next-link').textContent = 'Continue';
@@ -156,7 +156,7 @@
 <body>
     <div style="background-color: #4da6ff; color: white; padding: 40px 20px; margin: 0 auto 0; max-width: 960px;">
         <div style="position: relative;">
-            <h2 style="margin: 0; font-size: 28px;">拼读</h2>
+            <h2 style="margin: 0; font-size: 28px;"></h2>
             <div style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
                 <select id="lang-select" style="background-color: white; color: black; font-weight: bold; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;" onchange="changeLanguage()">
                     <option value="zh">中文</option>
@@ -167,25 +167,25 @@
     </div>
     <div class="header" style="margin-top: 0; border-radius: 0; width: 100%; padding: 4px 0;">
         <div class="container" style="max-width: 960px; margin: 0 auto;">
-            <h1 id="page-title" style="font-size: 24px;">声母 b 拼读</h1>
+            <h1 id="page-title" style="font-size: 24px;">拼读</h1>
         </div>
     </div>
     <div class="container" style="max-width: 960px; margin: 0 auto; padding: 20px;">
         <div class="course-content">
             <div class="video-section">
-                <div style="font-size: 36px; font-weight: bold; text-align: center; margin: 30px 0;">
+                <div style="font-size: 36px; font-weight: bold; text-align: left; margin: 30px 0;">
                     <span id="pinyin-b">b</span> <span style="font-size: 24px;">+</span> <span id="pinyin-a">a</span> <span style="font-size: 24px;">→</span> <span id="pinyin-ba" style="color: #0066cc;">ba</span>
                 </div>
-                <div class="audio-player">
+                <div class="audio-player" style="text-align: left;">
                     <audio controls>
                         <source src="ba.m4a" type="audio/mp4">
                         您的浏览器不支持音频播放。
                      </audio>
                 </div>
-                <div style="margin-top: 20px;">
+                <div style="margin-top: 20px; text-align: left;">
                     <p id="pinyin-tip" style="font-size: 16px; line-height: 1.5;">先说 b，然后立刻接上 a。不要停。</p>
                 </div>
-                <div class="recording-section" style="margin-top: 20px;">
+                <div class="recording-section" style="margin-top: 20px; text-align: left;">
                     <button id="record-btn" class="lang-select" style="margin: 0;">🎙️ 录音</button>
                     <p id="recording-status" style="margin-top: 10px; color: #666;"></p>
                 </div>
