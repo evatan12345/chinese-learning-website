@@ -15,8 +15,7 @@
             background-color: #f5f5f5;
         }
         .container {
-            max-width: 960px;
-            margin: 0 auto;
+            width: 100%;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -165,7 +164,7 @@
     </script>
 </head>
 <body>
-    <div style="background-color: #4da6ff; color: white; padding: 40px 20px; margin: 0 auto 0; max-width: 960px;">
+    <div style="background-color: #4da6ff; color: white; padding: 40px 20px; width: 100%;">
         <div style="position: relative;">
             <div style="position: absolute; top: 50%; right: 0; transform: translateY(-50%);">
                 <select id="lang-select" style="background-color: white; color: black; font-weight: bold; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;" onchange="changeLanguage()">
@@ -175,12 +174,12 @@
             </div>
         </div>
     </div>
-    <div class="header" style="margin-top: 0; border-radius: 0; width: 100%; padding: 4px 0;">
-        <div class="container" style="max-width: 960px; margin: 0 auto;">
+    <div class="header" style="margin-top: 0; border-radius: 0; width: 100%; padding: 2px 0;">
+        <div class="container" style="width: 100%;">
             <h1 id="page-title" style="font-size: 24px;">你听到的是哪一个？</h1>
         </div>
     </div>
-    <div class="container" style="max-width: 960px; margin: 0 auto; padding: 20px;">
+    <div class="container" style="width: 100%; padding: 20px;">
         <div class="course-content">
             <div class="practice-section">
                 <div class="practice-item">
@@ -303,10 +302,12 @@
                     </div>
                 </div>
                 
-                <button id="submit-btn" class="submit-btn" onclick="checkAnswers()">完成</button>
-                <a href="lesson2.html" class="submit-btn" style="margin-left: 10px; text-decoration: none; display: inline-block; text-align: center;" id="continue-btn">继续</a>
             </div>
-            <a href="preparation.html" class="back-link" id="back-link">返回课程列表</a>
+            <div style="margin-top: 20px;">
+                <a href="preparation.html" class="back-link" id="back-link" style="margin-right: 20px;">返回课程列表</a>
+                <a href="#" class="back-link" id="submit-btn" onclick="checkAnswers()" style="margin-right: 20px;">完成</a>
+                <a href="lesson2.html" class="back-link" id="continue-btn">继续</a>
+            </div>
             
             <div style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
                 <p id="footer-text" style="font-size: 16px; line-height: 1.5; text-align: left;">学中文发音，就像学一套新的嘴部动作。下一课，我们会把这些声音和字母组合起来。</p>
