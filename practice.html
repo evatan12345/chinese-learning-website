@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>练习</title>
+    <title>你听到的是哪一个？</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -60,50 +60,29 @@
         }
         .practice-item {
             margin-bottom: 30px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
         }
-        .practice-item h3 {
-            color: #0066cc;
-            margin-top: 0;
+        .practice-item:last-child {
+            border-bottom: none;
         }
         .audio-player {
-            margin: 15px 0;
+            margin: 10px 0;
         }
         .options {
-            margin-top: 20px;
+            margin-top: 15px;
         }
-        .option {
-            display: inline-block;
-            margin-right: 15px;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
+        .options select {
+            padding: 8px 12px;
             border-radius: 4px;
-            cursor: pointer;
-        }
-        .option:hover {
-            background-color: #e0e0e0;
-        }
-        .option.selected {
-            background-color: #0066cc;
-            color: white;
+            border: 1px solid #ddd;
         }
         .result {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 4px;
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 20px;
         }
-        .result.correct {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        .result.incorrect {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-        .finish-btn {
+        .submit-btn {
             background-color: #0066cc;
             color: white;
             border: none;
@@ -111,8 +90,9 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            margin-top: 20px;
         }
-        .finish-btn:hover {
+        .submit-btn:hover {
             background-color: #0052a3;
         }
         .back-link {
@@ -124,136 +104,62 @@
         .back-link:hover {
             text-decoration: underline;
         }
-        .continue-btn {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-left: 10px;
-        }
-        .continue-btn:hover {
-            background-color: #45a049;
-        }
-        .feedback {
-            margin-left: 10px;
-            font-weight: bold;
-        }
-        .feedback.good {
-            color: green;
-        }
-        .feedback.bad {
-            color: red;
-        }
     </style>
     <script>
         function changeLanguage() {
             var lang = document.getElementById('lang-select').value;
             if (lang === 'zh') {
-                document.title = '练习';
-                document.getElementById('page-title').textContent = '练习';
-                document.getElementById('practice1').textContent = '练习 1';
-                document.getElementById('practice2').textContent = '练习 2';
-                document.getElementById('practice3').textContent = '练习 3';
-                document.getElementById('practice4').textContent = '练习 4';
-                document.getElementById('practice5').textContent = '练习 5';
-                document.getElementById('practice6').textContent = '练习 6';
-                document.getElementById('option-a-1').textContent = 'a';
-                document.getElementById('option-o-1').textContent = 'o';
-                document.getElementById('option-e-1').textContent = 'e';
-                document.getElementById('option-a-2').textContent = 'a';
-                document.getElementById('option-o-2').textContent = 'o';
-                document.getElementById('option-e-2').textContent = 'e';
-                document.getElementById('option-a-3').textContent = 'a';
-                document.getElementById('option-o-3').textContent = 'o';
-                document.getElementById('option-e-3').textContent = 'e';
-                document.getElementById('option-a-4').textContent = 'a';
-                document.getElementById('option-o-4').textContent = 'o';
-                document.getElementById('option-e-4').textContent = 'e';
-                document.getElementById('option-a-5').textContent = 'a';
-                document.getElementById('option-o-5').textContent = 'o';
-                document.getElementById('option-e-5').textContent = 'e';
-                document.getElementById('option-a-6').textContent = 'a';
-                document.getElementById('option-o-6').textContent = 'o';
-                document.getElementById('option-e-6').textContent = 'e';
-                document.getElementById('finish-btn').textContent = '完成';
+                document.title = '你听到的是哪一个？';
+                document.getElementById('page-title').textContent = '你听到的是哪一个？';
+                document.getElementById('submit-btn').textContent = '完成';
                 document.getElementById('continue-btn').textContent = '继续';
                 document.getElementById('back-link').textContent = '返回课程列表';
-                document.getElementById('footer-text').textContent = '中文发音不是记规则，而是慢慢让嘴巴习惯新的动作。下一课，我们继续学新的声音。';
+                document.getElementById('footer-text').textContent = '学中文发音，就像学一套新的嘴部动作。下一课，我们会把这些声音和字母组合起来。';
             } else if (lang === 'en') {
-                document.title = 'Practice';
-                document.getElementById('page-title').textContent = 'Practice';
-                document.getElementById('practice1').textContent = 'Practice 1';
-                document.getElementById('practice2').textContent = 'Practice 2';
-                document.getElementById('practice3').textContent = 'Practice 3';
-                document.getElementById('practice4').textContent = 'Practice 4';
-                document.getElementById('practice5').textContent = 'Practice 5';
-                document.getElementById('practice6').textContent = 'Practice 6';
-                document.getElementById('option-a-1').textContent = 'a';
-                document.getElementById('option-o-1').textContent = 'o';
-                document.getElementById('option-e-1').textContent = 'e';
-                document.getElementById('option-a-2').textContent = 'a';
-                document.getElementById('option-o-2').textContent = 'o';
-                document.getElementById('option-e-2').textContent = 'e';
-                document.getElementById('option-a-3').textContent = 'a';
-                document.getElementById('option-o-3').textContent = 'o';
-                document.getElementById('option-e-3').textContent = 'e';
-                document.getElementById('option-a-4').textContent = 'a';
-                document.getElementById('option-o-4').textContent = 'o';
-                document.getElementById('option-e-4').textContent = 'e';
-                document.getElementById('option-a-5').textContent = 'a';
-                document.getElementById('option-o-5').textContent = 'o';
-                document.getElementById('option-e-5').textContent = 'e';
-                document.getElementById('option-a-6').textContent = 'a';
-                document.getElementById('option-o-6').textContent = 'o';
-                document.getElementById('option-e-6').textContent = 'e';
-                document.getElementById('finish-btn').textContent = 'Finish';
+                document.title = 'Which one do you hear?';
+                document.getElementById('page-title').textContent = 'Which one do you hear?';
+                document.getElementById('submit-btn').textContent = 'Submit';
                 document.getElementById('continue-btn').textContent = 'Continue';
                 document.getElementById('back-link').textContent = 'Back to Course List';
-                document.getElementById('footer-text').textContent = 'Chinese pronunciation is not about memorizing rules, but about slowly getting your mouth used to new movements. Next lesson, we will continue learning new sounds.';
+                document.getElementById('footer-text').textContent = 'Learning Chinese pronunciation is like learning a new set of mouth movements. In the next lesson, we will combine these sounds with letters.';
             }
         }
         
-        // 正确答案数组
+        // 正确答案
         const correctAnswers = ['a', 'e', 'o', 'a', 'o', 'e'];
         
-        // 用户选择的答案
-        const userAnswers = new Array(6).fill('');
-        
-        // 选择选项
-        function selectOption(practiceIndex, option) {
-            // 移除该练习的所有选项的selected类
-            const options = document.querySelectorAll(`#practice-${practiceIndex + 1} .option`);
-            options.forEach(opt => opt.classList.remove('selected'));
-            
-            // 为当前选项添加selected类
-            const selectedOption = document.getElementById(`option-${option}-${practiceIndex + 1}`);
-            selectedOption.classList.add('selected');
-            
-            // 保存用户选择
-            userAnswers[practiceIndex] = option;
-        }
-        
-        // 检查答案
         function checkAnswers() {
             let correctCount = 0;
-            
-            for (let i = 0; i < correctAnswers.length; i++) {
-                if (userAnswers[i] === correctAnswers[i]) {
+            for (let i = 1; i <= 6; i++) {
+                const selected = document.getElementById(`option-${i}`).value;
+                const resultElement = document.getElementById(`result-${i}`);
+                
+                if (selected === correctAnswers[i-1]) {
+                    resultElement.textContent = '✅';
+                    resultElement.style.color = 'green';
                     correctCount++;
+                } else {
+                    resultElement.textContent = '❌';
+                    resultElement.style.color = 'red';
                 }
             }
             
-            // 显示结果
-            const feedback = document.getElementById('feedback');
+            // 显示结果提示
+            let feedbackElement = document.getElementById('feedback');
+            if (!feedbackElement) {
+                feedbackElement = document.createElement('div');
+                feedbackElement.id = 'feedback';
+                feedbackElement.style.marginLeft = '20px';
+                feedbackElement.style.fontSize = '16px';
+                document.getElementById('submit-btn').parentElement.appendChild(feedbackElement);
+            }
+            
             if (correctCount >= 5) {
-                feedback.textContent = '很棒！正确率大于75%！再接再厉！';
-                feedback.className = 'feedback good';
+                feedbackElement.textContent = '很棒！正确率大于75%！再接再厉！';
+                feedbackElement.style.color = 'green';
             } else {
-                feedback.textContent = '没关系，再听一次。';
-                feedback.className = 'feedback bad';
+                feedbackElement.textContent = '没关系，再听一次。';
+                feedbackElement.style.color = 'red';
             }
         }
     </script>
@@ -269,119 +175,141 @@
             </div>
         </div>
     </div>
-    <div class="header" style="margin-top: 0; border-radius: 0; width: 100%; padding: 2px 0;">
+    <div class="header" style="margin-top: 0; border-radius: 0; width: 100%; padding: 4px 0;">
         <div class="container" style="max-width: 960px; margin: 0 auto;">
-            <h1 id="page-title" style="font-size: 24px;">练习</h1>
+            <h1 id="page-title" style="font-size: 24px;">你听到的是哪一个？</h1>
         </div>
     </div>
     <div class="container" style="max-width: 960px; margin: 0 auto; padding: 20px;">
         <div class="course-content">
             <div class="practice-section">
-                <!-- 练习 1 -->
-                <div class="practice-item" id="practice-1">
-                    <h3 id="practice1">练习 1</h3>
+                <div class="practice-item">
+                    <p>练习 1:</p>
                     <div class="audio-player">
                         <audio controls>
                             <source src="practice1.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
                           </audio>
+                        <span id="result-1" class="result"></span>
                     </div>
                     <div class="options">
-                        <div class="option" id="option-a-1" onclick="selectOption(0, 'a')">a</div>
-                        <div class="option" id="option-o-1" onclick="selectOption(0, 'o')">o</div>
-                        <div class="option" id="option-e-1" onclick="selectOption(0, 'e')">e</div>
+                        <label for="option-1">选择您听到的韵母：</label>
+                        <select id="option-1">
+                            <option value="">请选择</option>
+                            <option value="a">a</option>
+                            <option value="o">o</option>
+                            <option value="e">e</option>
+                        </select>
                     </div>
                 </div>
                 
-                <!-- 练习 2 -->
-                <div class="practice-item" id="practice-2">
-                    <h3 id="practice2">练习 2</h3>
+                <div class="practice-item">
+                    <p>练习 2:</p>
                     <div class="audio-player">
                         <audio controls>
                             <source src="practice2.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
-                          </audio>
+                         </audio>
+                        <span id="result-2" class="result"></span>
                     </div>
                     <div class="options">
-                        <div class="option" id="option-a-2" onclick="selectOption(1, 'a')">a</div>
-                        <div class="option" id="option-o-2" onclick="selectOption(1, 'o')">o</div>
-                        <div class="option" id="option-e-2" onclick="selectOption(1, 'e')">e</div>
+                        <label for="option-2">选择您听到的韵母：</label>
+                        <select id="option-2">
+                            <option value="">请选择</option>
+                            <option value="a">a</option>
+                            <option value="o">o</option>
+                            <option value="e">e</option>
+                        </select>
                     </div>
                 </div>
                 
-                <!-- 练习 3 -->
-                <div class="practice-item" id="practice-3">
-                    <h3 id="practice3">练习 3</h3>
+                <div class="practice-item">
+                    <p>练习 3:</p>
                     <div class="audio-player">
                         <audio controls>
                             <source src="practice3.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
-                          </audio>
+                         </audio>
+                        <span id="result-3" class="result"></span>
                     </div>
                     <div class="options">
-                        <div class="option" id="option-a-3" onclick="selectOption(2, 'a')">a</div>
-                        <div class="option" id="option-o-3" onclick="selectOption(2, 'o')">o</div>
-                        <div class="option" id="option-e-3" onclick="selectOption(2, 'e')">e</div>
+                        <label for="option-3">选择您听到的韵母：</label>
+                        <select id="option-3">
+                            <option value="">请选择</option>
+                            <option value="a">a</option>
+                            <option value="o">o</option>
+                            <option value="e">e</option>
+                        </select>
                     </div>
                 </div>
                 
-                <!-- 练习 4 -->
-                <div class="practice-item" id="practice-4">
-                    <h3 id="practice4">练习 4</h3>
+                <div class="practice-item">
+                    <p>练习 4:</p>
                     <div class="audio-player">
                         <audio controls>
                             <source src="practice4.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
-                          </audio>
+                         </audio>
+                        <span id="result-4" class="result"></span>
                     </div>
                     <div class="options">
-                        <div class="option" id="option-a-4" onclick="selectOption(3, 'a')">a</div>
-                        <div class="option" id="option-o-4" onclick="selectOption(3, 'o')">o</div>
-                        <div class="option" id="option-e-4" onclick="selectOption(3, 'e')">e</div>
+                        <label for="option-4">选择您听到的韵母：</label>
+                        <select id="option-4">
+                            <option value="">请选择</option>
+                            <option value="a">a</option>
+                            <option value="o">o</option>
+                            <option value="e">e</option>
+                        </select>
                     </div>
                 </div>
                 
-                <!-- 练习 5 -->
-                <div class="practice-item" id="practice-5">
-                    <h3 id="practice5">练习 5</h3>
+                <div class="practice-item">
+                    <p>练习 5:</p>
                     <div class="audio-player">
                         <audio controls>
                             <source src="practice5.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
-                          </audio>
+                         </audio>
+                        <span id="result-5" class="result"></span>
                     </div>
                     <div class="options">
-                        <div class="option" id="option-a-5" onclick="selectOption(4, 'a')">a</div>
-                        <div class="option" id="option-o-5" onclick="selectOption(4, 'o')">o</div>
-                        <div class="option" id="option-e-5" onclick="selectOption(4, 'e')">e</div>
+                        <label for="option-5">选择您听到的韵母：</label>
+                        <select id="option-5">
+                            <option value="">请选择</option>
+                            <option value="a">a</option>
+                            <option value="o">o</option>
+                            <option value="e">e</option>
+                        </select>
                     </div>
                 </div>
                 
-                <!-- 练习 6 -->
-                <div class="practice-item" id="practice-6">
-                    <h3 id="practice6">练习 6</h3>
+                <div class="practice-item">
+                    <p>练习 6:</p>
                     <div class="audio-player">
                         <audio controls>
                             <source src="practice6.m4a" type="audio/mp4">
                             您的浏览器不支持音频播放。
-                          </audio>
+                         </audio>
+                        <span id="result-6" class="result"></span>
                     </div>
                     <div class="options">
-                        <div class="option" id="option-a-6" onclick="selectOption(5, 'a')">a</div>
-                        <div class="option" id="option-o-6" onclick="selectOption(5, 'o')">o</div>
-                        <div class="option" id="option-e-6" onclick="selectOption(5, 'e')">e</div>
+                        <label for="option-6">选择您听到的韵母：</label>
+                        <select id="option-6">
+                            <option value="">请选择</option>
+                            <option value="a">a</option>
+                            <option value="o">o</option>
+                            <option value="e">e</option>
+                        </select>
                     </div>
                 </div>
                 
-                <div style="margin-top: 30px; text-align: left;">
-                    <a href="preparation.html" class="back-link" id="back-link" style="margin-right: 10px;">返回课程列表</a>
-                    <a href="#" id="finish-btn" class="back-link" onclick="checkAnswers()" style="margin-right: 10px;">完成</a>
-                    <span id="feedback" class="feedback" style="margin-right: 10px;"></span>
-                    <a href="lesson2.html" id="continue-btn" class="back-link" style="margin-right: 10px;">继续</a>
-                </div>
+                <button id="submit-btn" class="submit-btn" onclick="checkAnswers()">完成</button>
+                <a href="lesson3.html" class="submit-btn" style="margin-left: 10px; text-decoration: none; display: inline-block; text-align: center;" id="continue-btn">继续</a>
+            </div>
+            <a href="preparation.html" class="back-link" id="back-link">返回课程列表</a>
             
             <div style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
-                <p id="footer-text" style="font-size: 16px; line-height: 1.5; text-align: left;">中文发音不是记规则，而是慢慢让嘴巴习惯新的动作。下一课，我们继续学新的声音。</p>
+                <p id="footer-text" style="font-size: 16px; line-height: 1.5;">学中文发音，就像学一套新的嘴部动作。下一课，我们会把这些声音和字母组合起来。</p>
             </div>
         </div>
     </div>
