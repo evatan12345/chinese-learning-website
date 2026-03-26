@@ -27,31 +27,14 @@
 
 ## 如何部署到GitHub
 
-1. **安装Git**
-   - 访问 https://git-scm.com/downloads 下载并安装Git
-   - 安装完成后重启电脑
-
-2. **初始化Git仓库**
-   ```bash
-   # 在项目目录中执行
-   git init
-   git add .
-   git commit -m "Initial commit"
-   ```
-
-3. **创建GitHub仓库**
-   - 登录GitHub账号
-   - 点击右上角的"+"按钮，选择"New repository"
-   - 填写仓库名称，选择公开或私有，然后点击"Create repository"
-
-4. **关联本地仓库与GitHub仓库**
+1. **关联本地仓库与GitHub仓库**
    ```bash
    # 在GitHub仓库页面复制远程仓库URL
    git remote add origin <远程仓库URL>
    git push -u origin main
    ```
 
-5. **验证部署**
+2. **验证部署**
    - 刷新GitHub仓库页面，确认所有文件已上传
 
 ## 技术栈
